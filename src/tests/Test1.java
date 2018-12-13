@@ -85,7 +85,7 @@ public class Test1 {
 	      //WebElement iframe2 = driver.findElement(By.xpath("//frame[@name='_pprIFrame']"));
 	      //driver.switchTo().frame(iframe2);
 	      
-	      driver.findElement(By.xpath("//form[@name='DefaultFormName']//button[@class='x80']")).click();
+	      driver.findElement(By.xpath("//form[@name='DefaultFormName']//button[@title='Yes']")).click();
 	      try {
 				Thread.sleep(10000);
 			} catch (InterruptedException e) {
