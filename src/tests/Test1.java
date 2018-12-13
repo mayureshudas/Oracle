@@ -71,7 +71,27 @@ public class Test1 {
 	      driver.findElement(By.xpath("//form[@name='DefaultFormName']//table//table[@class='x1k']//a[@title='Core Services']")).click();
 	      driver.findElement(By.xpath("//form[@name='DefaultFormName']//table//td[@class='x9y']//a[@title='Caching Framework']")).click();
 	      driver.findElement(By.xpath("//form[@name='DefaultFormName']//table//table[@class='x83']//a[@title='Global Configuration']")).click();
-	      driver.findElement(By.xpath("//form[@name='DefaultFormName']//table[@class='x6w']//table//a[@id='N49']")).click();
+	       driver.findElement(By.xpath("//form[@name='DefaultFormName']//table[@class='x6w']//table//button[@id='ClearCache']")).click();
+	      try {
+				Thread.sleep(10000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	     WebElement iframe= driver.findElement(By.xpath("//form[@name='DefaultFormName']//table[@class='x6w']//div[@id='popupdefaultDialogPopup']//iframe[@id='iframedefaultDialogPopup']"));
+	      driver.switchTo().frame(iframe);
+	      WebElement iframe1=   driver.findElement(By.xpath("//frameset[@title='Content']/frame[@title='Content']"));
+	      driver.switchTo().frame(iframe1);
+	      //WebElement iframe2 = driver.findElement(By.xpath("//frame[@name='_pprIFrame']"));
+	      //driver.switchTo().frame(iframe2);
+	      
+	      driver.findElement(By.xpath("//form[@name='DefaultFormName']//button[@class='x80']")).click();
+	      try {
+				Thread.sleep(10000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	      
 	      driver.get("http://ebsdevops03.compute-602842092.oraclecloud.internal:8000");
 			driver.findElement(By.xpath("//form[@id='login']//input[@name='usernameField']")).sendKeys("MBHARMAL");
